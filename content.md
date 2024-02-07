@@ -60,6 +60,10 @@ When you run a migration using the `rails db:migrate` command, several things ha
 
 3. **`schema.rb` is Updated**: After running migrations, Rails updates the db/schema.rb file. This file acts as the authoritative source for your database schema, allowing new instances of the application to replicate the schema without running all the migrations sequentially.
 
+<schema>
+You shouldn't manually edit the `schema.rb` file. It is an auto-generated reflection of the database created when a migration is run.
+</schema>
+
 Example of `schema_migrations` Table
 Imagine you have two migrations:
 
