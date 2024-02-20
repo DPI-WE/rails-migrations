@@ -96,6 +96,7 @@ This table tells Rails that these migrations have already been applied, preventi
 
 7. **Avoid Editing Migrations That Have Been Merged**: Once a migration has been merged into your main branch and possibly run in production, avoid editing it. If you need to make changes, create a new migration.
 
+8. **Execution order is crucial**: Dependencies should be carefully managed to avoid errors, such as attempting to reference a model before its creation. A well-orchestrated order ensures a smooth and error-free transition.
 
 ## Exercise: Adding a New Column
 Objective: Add a username column to your users table.
