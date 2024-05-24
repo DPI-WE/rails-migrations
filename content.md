@@ -105,6 +105,80 @@ Objective: Add a username column to your users table.
 2. In the migration file, use the `add_column` method to add a `username` column of type string to the users table.
 3. Run the migration.
 
+## Quiz
+
+- What is the primary purpose of Rails migrations?
+- To manage database schema changes over time.
+  - Correct! Migrations help manage and track changes to the database schema in a controlled manner.
+- To create new Rails applications.
+  - Not quite. Creating new applications is handled by Rails generators, not migrations.
+- To handle user authentication.
+  - Not quite. User authentication is managed by gems like Devise or custom code, not migrations.
+{: .choose_best #migration_purpose title="Purpose of Rails Migrations" points="1" answer="1" }
+
+- What command is used to generate a new migration in Rails?
+- rails new MigrationName
+  - Not quite. The `rails new` command is used to create a new Rails application.
+- rails db:migrate
+  - Not quite. The `rails db:migrate` command is used to run pending migrations.
+- rails generate migration MigrationName
+  - Correct! This command generates a new migration file with a specified name.
+{: .choose_best #generate_migration title="Generating a Migration" points="1" answer="3" }
+
+- Which methods are typically included in a Rails migration file?
+- `start` and `stop`
+  - Not quite. These are not standard methods in Rails migrations.
+- `up` and `down`
+  - Correct! These methods describe how to apply and revert the migration. We also have the revertable `change` method.
+- `create` and `delete`
+  - Not quite. These are not the methods used to define migration changes.
+{: .choose_best #migration_methods title="Methods in a Migration File" points="1" answer="2" }
+
+- What command do you use to apply migrations to the database?
+- rails db:migrate
+  - Correct! This command applies all pending migrations to the database.
+- rails db:rollback
+  - Not quite. This command is used to undo the last migration.
+- rails generate migration
+  - Not quite. This command is used to generate new migrations.
+{: .choose_best #apply_migrations title="Applying Migrations" points="1" answer="1" }
+
+- Why is it important that many migration operations are reversible?
+- To improve application performance.
+  - Not quite. While important, reversibility is not directly related to performance.
+- To easily undo a migration if needed.
+  - Correct! Reversibility allows developers to revert changes safely.
+- To enhance user authentication.
+  - Not quite. Reversibility pertains to database schema changes, not authentication.
+{: .choose_best #reversible_operations title="Reversible Operations" points="1" answer="2" }
+
+- Which of the following methods is used to add a column to a table in Rails?
+- create_table
+  - Not quite. This method is used to create a new table.
+- remove_column
+  - Not quite. This method is used to remove an existing column.
+- add_column
+  - Correct! This method adds a new column to an existing table.
+{: .choose_best #add_column title="Adding a Column" points="1" answer="3" }
+
+- What is the purpose of the `schema_migrations` table in Rails?
+- To keep track of which migrations have been applied.
+  - Correct! This table records the versions of applied migrations.
+- To store user data.
+  - Not quite. User data is stored in user-defined tables, not `schema_migrations`.
+- To manage Rails routes.
+  - Not quite. Routes are managed in the `routes.rb` file, not the `schema_migrations` table.
+{: .choose_best #schema_migrations_table title="Purpose of schema_migrations Table" points="1" answer="1" }
+
+- Which of the following is a best practice when working with Rails migrations?
+- Edit migrations that have been merged into the main branch.
+  - Not quite. It's best to create a new migration for changes rather than editing existing ones.
+- Avoid using version control for `schema.rb`.
+  - Not quite. It's important to track `schema.rb` in version control for consistency.
+- Make a single structural change per migration.
+  - Correct! Keeping migrations simple and focused helps in troubleshooting and rollback.
+{: .choose_best #best_practices title="Best Practices for Migrations" points="1" answer="3" }
+
 ## Conclusion
 Migrations are a fundamental part of Rails' approach to database management, allowing for easy and safe modifications to the database schema. By understanding and utilizing migrations, you can ensure that your application's data model evolves smoothly as your application grows. Understanding the mechanics of Rails migrations and following best practices ensures a smooth development process and helps maintain a clean and manageable database schema.
 
