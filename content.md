@@ -13,7 +13,7 @@ Migrations are Ruby classes that are designed to make it simple to create and mo
 ## Creating a Migration
 To create a new migration, you'll use the rails generate migration command followed by the name of your migration. The name should describe the purpose of the migration. For example:
 
-`rails generate migration AddEmailToUsers`
+'rails generate migration AddEmailToUsers email:string'
 
 This command will generate a migration file in the `db/migrate` directory. The file will be prefixed with a timestamp to ensure migrations are run in the order they were created.
 
